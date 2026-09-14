@@ -1,43 +1,422 @@
-<script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+<!doctype html>
+<html lang="en"> 
+  <head>
+  <meta charset="utf-8">
 
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-    status.textContent = "Sending...";
+  <title>Contact JHUY Holdings</title>
 
-    const formData = {
-      name: document.getElementById("name").value,
-      company: document.getElementById("company").value,
-      email: document.getElementById("email").value,
-      inquiry_type: document.getElementById("inquiry_type").value,
-      message: document.getElementById("message").value
-    };
+  <meta
+    name="description"
+    content="Contact JHUY Holdings for transport and fruit inquiries."
+  >
 
-    try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxnS6B79p_GqEQDASfshwQG72o9wrTEl_OO_0-VYuqkC1JR8A3L-NB030c8swJrp0K8/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8"
-          },
-          body: JSON.stringify(formData)
-        }
-      );
+  <link
+    rel="stylesheet"
+    href="assets/site.css?v=4"
+  >
+</head>
 
-      const result = await response.json();
 
-      if (result.success) {
-        status.textContent = "Thank you. Your inquiry has been sent successfully.";
-        form.reset();
-      } else {
-        status.textContent = "Sorry, something went wrong. Please try again.";
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a class="holdings-brand" href="index.html">
+      <span class="holdings-mark">J</span>
+
+      <span>
+        <strong>JHUY</strong>
+        <small>HOLDINGS</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-btn"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav class="nav">
+
+      <a href="index.html#about">
+        About
+      </a>
+
+      <a href="index.html#companies">
+        Companies
+      </a>
+
+      <a href="index.html#partners">
+        Partners
+      </a>
+
+      <a href="transport.html">
+        Transport
+      </a>
+
+      <a href="fruit.html">
+        Fruit
+      </a>
+
+      <a
+        class="nav-cta"
+        href="contact.html"
+      >
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- CONTACT PAGE -->
+  <main class="contact-page">
+
+    <div class="shell contact-page-grid">
+
+
+      <!-- LEFT SIDE -->
+      <div>
+
+        <p class="eyebrow">
+          CONTACT JHUY
+        </p>
+
+        <h1>
+          Start a conversation.
+        </h1>
+
+        <p
+          style="
+            font-size:18px;
+            color:var(--muted);
+          "
+        >
+          For transportation or fruit inquiries,
+          send us the details and the appropriate
+          JHUY team will follow up.
+        </p>
+
+
+        <div
+          class="contact-list"
+          style="margin-top:40px;"
+        >
+
+          <a
+            class="contact-row"
+            href="mailto:jhuytransport@gmail.com"
+          >
+
+            <span>Email</span>
+
+            <strong>
+              jhuytransport@gmail.com
+            </strong>
+
+          </a>
+
+
+          <a
+            class="contact-row"
+            href="tel:+639944007339"
+          >
+
+            <span>Phone</span>
+
+            <strong>
+              +63 994 400 7339
+            </strong>
+
+          </a>
+
+
+          <div class="contact-row">
+
+            <span>Office</span>
+
+            <strong>
+              145 D. Tuazon St.,
+              Quezon City,
+              Philippines
+            </strong>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <span>Hours</span>
+
+            <strong>
+              Mon–Fri · 9:00 AM–5:00 PM
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT FORM -->
+      <form
+        class="form"
+        id="contact-form"
+      >
+
+        <div class="form-grid">
+
+
+          <div class="field">
+
+            <label for="name">
+              Name
+            </label>
+
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              placeholder="Your name"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="company">
+              Company
+            </label>
+
+            <input
+              id="company"
+              name="company"
+              type="text"
+              placeholder="Company name"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@company.com"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="inquiry_type">
+              Inquiry type
+            </label>
+
+            <select
+              id="inquiry_type"
+              name="inquiry_type"
+              required
+            >
+
+              <option value="">
+                Select inquiry type
+              </option>
+
+              <option value="JHUY Transport">
+                JHUY Transport
+              </option>
+
+              <option value="JHUY Fruit">
+                JHUY Fruit
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field full">
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Tell us about your inquiry"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="btn"
+          id="submit-btn"
+          type="submit"
+        >
+          Send inquiry →
+        </button>
+
+
+        <p
+          class="form-note"
+          id="form-status"
+        ></p>
+
+      </form>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <span>
+      © <span data-year></span> JHUY Holdings.
+    </span>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Holdings
+      </a>
+
+      <a href="transport.html">
+        Transport
+      </a>
+
+      <a href="fruit.html">
+        Fruit
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- EXISTING SITE JAVASCRIPT -->
+  <script src="assets/site.js"></script>
+
+
+  <!-- SEPTEMBER 2026 CONTACT FORM -->
+  <script>
+
+    const form =
+      document.getElementById("contact-form");
+
+    const status =
+      document.getElementById("form-status");
+
+    const submitButton =
+      document.getElementById("submit-btn");
+
+
+    form.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        status.textContent =
+          "Sending...";
+
+        submitButton.disabled = true;
+
+
+        const formData = {
+
+          name:
+            document.getElementById("name").value,
+
+          company:
+            document.getElementById("company").value,
+
+          email:
+            document.getElementById("email").value,
+
+          inquiry_type:
+            document.getElementById("inquiry_type").value,
+
+          message:
+            document.getElementById("message").value
+
+        };
+
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxnS6B79p_GqEQDASfshwQG72o9wrTEl_OO_0-VYuqkC1JR8A3L-NB030c8swJrp0K8/exec",
+          {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body:
+              JSON.stringify(formData)
+
+          }
+        )
+
+        .then(function() {
+
+          status.textContent =
+            "Thank you. Your inquiry has been sent successfully.";
+
+          form.reset();
+
+          submitButton.disabled = false;
+
+        })
+
+        .catch(function(error) {
+
+          console.error(error);
+
+          status.textContent =
+            "Sorry, something went wrong. Please try again.";
+
+          submitButton.disabled = false;
+
+        });
+
       }
+    );
 
-    } catch (error) {
-      status.textContent = "Sorry, something went wrong. Please try again.";
-    }
-  });
-</script>
+  </script>
+
+</body>
+
+</html>
