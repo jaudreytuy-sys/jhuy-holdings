@@ -18,7 +18,7 @@
 
   <link
     rel="stylesheet"
-    href="assets/site.css?v=4"
+    href="assets/site.css?v=5"
   >
 </head>
 
@@ -28,13 +28,16 @@
   <header class="site-header">
 
     <a class="holdings-brand" href="index.html">
+
       <span class="holdings-mark">J</span>
 
       <span>
         <strong>JHUY</strong>
         <small>HOLDINGS</small>
       </span>
+
     </a>
+
 
     <button
       class="menu-btn"
@@ -43,6 +46,7 @@
     >
       ☰
     </button>
+
 
     <nav class="nav">
 
@@ -83,6 +87,7 @@
 
     <div class="shell contact-page-grid">
 
+
       <!-- LEFT SIDE -->
       <div>
 
@@ -104,6 +109,7 @@
           send us the details and the appropriate
           JHUY team will follow up.
         </p>
+
 
         <div
           class="contact-list"
@@ -129,9 +135,13 @@
       <form
         class="form"
         id="contact-form"
+        action="https://script.google.com/macros/s/AKfycbx9zLuLkNprJxHgGMKDxgthCLqEvWrmbP6D_lSRUuRvkSqkcegAXns6W-1OruHDuM9I/exec"
+        method="POST"
+        target="form-submit-frame"
       >
 
         <div class="form-grid">
+
 
           <div class="field">
 
@@ -246,6 +256,14 @@
 
       </form>
 
+
+      <!-- Hidden frame prevents leaving the contact page -->
+      <iframe
+        name="form-submit-frame"
+        id="form-submit-frame"
+        style="display:none;"
+      ></iframe>
+
     </div>
 
   </main>
@@ -277,11 +295,10 @@
   </footer>
 
 
-  <!-- EXISTING SITE JAVASCRIPT -->
   <script src="assets/site.js"></script>
 
 
-  <!-- SEPTEMBER 2026 CONTACT FORM -->
+  <!-- CONTACT FORM STATUS -->
   <script>
 
     const form =
@@ -296,9 +313,7 @@
 
     form.addEventListener(
       "submit",
-      function(event) {
-
-        event.preventDefault();
+      function() {
 
         status.textContent =
           "Sending...";
@@ -306,69 +321,16 @@
         submitButton.disabled = true;
 
 
-        const formData = {
-
-          name:
-            document.getElementById("name").value.trim(),
-
-          company:
-            document.getElementById("company").value.trim(),
-
-          email:
-            document.getElementById("email").value.trim(),
-
-          inquiry_type:
-            document.getElementById("inquiry_type").value,
-
-          message:
-            document.getElementById("message").value.trim()
-
-        };
-
-
-        fetch(
-          "https://script.google.com/macros/s/AKfycbyTA7VVav5OjIk_ZKSjWecNgu81r-DqRSA7dEO0gkch-y3ZdxlCd_WiMuXxwuExU2JI/exec",
-          {
-
-            method: "POST",
-
-            mode: "no-cors",
-
-            headers: {
-              "Content-Type":
-                "text/plain;charset=utf-8"
-            },
-
-            body:
-              JSON.stringify(formData)
-
-          }
-        )
-
-        .then(function() {
+        setTimeout(function() {
 
           status.textContent =
-            "Thank you. Your inquiry has been sent successfully.";
+            "Thank you. Your inquiry has been submitted.";
 
           form.reset();
 
           submitButton.disabled = false;
 
-        })
-
-        .catch(function(error) {
-
-          console.error(
-            "Contact form error:",
-            error
-          );
-
-          status.textContent =
-            "Sorry, something went wrong. Please try again.";
-
-          submitButton.disabled = false;
-
-        });
+        }, 1500);
 
       }
     );
