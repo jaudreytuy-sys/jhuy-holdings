@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en"> 
-  <head>
+<html lang="en">
+
+<head>
   <meta charset="utf-8">
 
   <meta
@@ -12,7 +13,7 @@
 
   <meta
     name="description"
-    content="Contact JHUY Holdings for transport and fruit inquiries."
+    content="Contact JHUY Holdings for transportation and premium fruit inquiries."
   >
 
   <link
@@ -28,13 +29,16 @@
   <header class="site-header">
 
     <a class="holdings-brand" href="index.html">
+
       <span class="holdings-mark">J</span>
 
       <span>
         <strong>JHUY</strong>
         <small>HOLDINGS</small>
       </span>
+
     </a>
+
 
     <button
       class="menu-btn"
@@ -43,6 +47,7 @@
     >
       ☰
     </button>
+
 
     <nav class="nav">
 
@@ -91,9 +96,11 @@
           CONTACT JHUY
         </p>
 
+
         <h1>
           Start a conversation.
         </h1>
+
 
         <p
           style="
@@ -112,12 +119,14 @@
           style="margin-top:40px;"
         >
 
+
+          <!-- TRANSPORT EMAIL -->
           <a
             class="contact-row"
             href="mailto:jhuytransport@gmail.com"
           >
 
-            <span>Email</span>
+            <span>Transport</span>
 
             <strong>
               jhuytransport@gmail.com
@@ -126,6 +135,22 @@
           </a>
 
 
+          <!-- FRUIT EMAIL -->
+          <a
+            class="contact-row"
+            href="mailto:juicylandmktg@yahoo.com"
+          >
+
+            <span>Fruit</span>
+
+            <strong>
+              juicylandmktg@yahoo.com
+            </strong>
+
+          </a>
+
+
+          <!-- PHONE -->
           <a
             class="contact-row"
             href="tel:+639944007339"
@@ -140,6 +165,7 @@
           </a>
 
 
+          <!-- OFFICE -->
           <div class="contact-row">
 
             <span>Office</span>
@@ -153,6 +179,7 @@
           </div>
 
 
+          <!-- HOURS -->
           <div class="contact-row">
 
             <span>Hours</span>
@@ -177,6 +204,7 @@
         <div class="form-grid">
 
 
+          <!-- NAME -->
           <div class="field">
 
             <label for="name">
@@ -194,6 +222,7 @@
           </div>
 
 
+          <!-- COMPANY -->
           <div class="field">
 
             <label for="company">
@@ -210,6 +239,7 @@
           </div>
 
 
+          <!-- EMAIL -->
           <div class="field">
 
             <label for="email">
@@ -227,6 +257,7 @@
           </div>
 
 
+          <!-- INQUIRY TYPE -->
           <div class="field">
 
             <label for="inquiry_type">
@@ -256,6 +287,7 @@
           </div>
 
 
+          <!-- MESSAGE -->
           <div class="field full">
 
             <label for="message">
@@ -274,6 +306,7 @@
         </div>
 
 
+        <!-- SUBMIT BUTTON -->
         <button
           class="btn"
           id="submit-btn"
@@ -283,6 +316,7 @@
         </button>
 
 
+        <!-- FORM STATUS -->
         <p
           class="form-note"
           id="form-status"
@@ -354,19 +388,19 @@
         const formData = {
 
           name:
-            document.getElementById("name").value,
+            document.getElementById("name").value.trim(),
 
           company:
-            document.getElementById("company").value,
+            document.getElementById("company").value.trim(),
 
           email:
-            document.getElementById("email").value,
+            document.getElementById("email").value.trim(),
 
           inquiry_type:
             document.getElementById("inquiry_type").value,
 
           message:
-            document.getElementById("message").value
+            document.getElementById("message").value.trim()
 
         };
 
@@ -403,7 +437,10 @@
 
         .catch(function(error) {
 
-          console.error(error);
+          console.error(
+            "Contact form error:",
+            error
+          );
 
           status.textContent =
             "Sorry, something went wrong. Please try again.";
