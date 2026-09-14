@@ -22,23 +22,19 @@
   >
 </head>
 
-
 <body>
 
   <!-- HEADER -->
   <header class="site-header">
 
     <a class="holdings-brand" href="index.html">
-
       <span class="holdings-mark">J</span>
 
       <span>
         <strong>JHUY</strong>
         <small>HOLDINGS</small>
       </span>
-
     </a>
-
 
     <button
       class="menu-btn"
@@ -47,7 +43,6 @@
     >
       ☰
     </button>
-
 
     <nav class="nav">
 
@@ -88,7 +83,6 @@
 
     <div class="shell contact-page-grid">
 
-
       <!-- LEFT SIDE -->
       <div>
 
@@ -96,11 +90,9 @@
           CONTACT JHUY
         </p>
 
-
         <h1>
           Start a conversation.
         </h1>
-
 
         <p
           style="
@@ -113,20 +105,24 @@
           JHUY team will follow up.
         </p>
 
-
         <div
-  class="contact-list"
-  style="margin-top:40px;"
->
+          class="contact-list"
+          style="margin-top:40px;"
+        >
 
-  <div class="contact-row">
-    <span>Hours</span>
-    <strong>
-      Mon–Fri · 9:00 AM–5:00 PM
-    </strong>
-  </div>
+          <div class="contact-row">
 
-</div>
+            <span>Hours</span>
+
+            <strong>
+              Mon–Fri · 9:00 AM–5:00 PM
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
       <!-- CONTACT FORM -->
@@ -137,8 +133,6 @@
 
         <div class="form-grid">
 
-
-          <!-- NAME -->
           <div class="field">
 
             <label for="name">
@@ -156,7 +150,6 @@
           </div>
 
 
-          <!-- COMPANY -->
           <div class="field">
 
             <label for="company">
@@ -173,7 +166,6 @@
           </div>
 
 
-          <!-- EMAIL -->
           <div class="field">
 
             <label for="email">
@@ -191,7 +183,6 @@
           </div>
 
 
-          <!-- INQUIRY TYPE -->
           <div class="field">
 
             <label for="inquiry_type">
@@ -221,7 +212,6 @@
           </div>
 
 
-          <!-- MESSAGE -->
           <div class="field full">
 
             <label for="message">
@@ -240,7 +230,6 @@
         </div>
 
 
-        <!-- SUBMIT BUTTON -->
         <button
           class="btn"
           id="submit-btn"
@@ -250,7 +239,6 @@
         </button>
 
 
-        <!-- FORM STATUS -->
         <p
           class="form-note"
           id="form-status"
@@ -312,7 +300,6 @@
 
         event.preventDefault();
 
-
         status.textContent =
           "Sending...";
 
@@ -340,7 +327,7 @@
 
 
         fetch(
-          "https://script.google.com/macros/s/AKfycbyTA7VVav5OjIk_ZKSjWecNgu81r-DqRSA7dEO0gkch-y3ZdxlCd_WiMuXxwuExU2JI/exec",
+          "https://script.google.com/macros/s/AKfycbxnS6B79p_GqEQDASfshwQG72o9wrTEl_OO_0-VYuqkC1JR8A3L-NB030c8swJrp0K8/exec",
           {
 
             method: "POST",
