@@ -16,49 +16,52 @@
     content="Contact JHUY Holdings for transportation and premium fruit inquiries."
   >
 
- <link rel="stylesheet" href="assets/site.css">
+  <link
+    rel="stylesheet"
+    href="assets/site.css"
+  >
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header">
 
-  <a
-    class="holdings-brand"
-    href="index.html"
-    aria-label="JHUY Holdings home"
-  >
-    <img
-      src="assets/images/brands/jhuy-holdings.png"
-      alt="JHUY Holdings"
+    <a
+      class="holdings-brand"
+      href="index.html"
+      aria-label="JHUY Holdings home"
     >
-  </a>
+      <img
+        src="assets/images/brands/jhuy-holdings.png"
+        alt="JHUY Holdings"
+      >
+    </a>
 
-  <button
-    class="menu-btn"
-    aria-label="Open menu"
-    aria-expanded="false"
-  >
-    ☰
-  </button>
+    <button
+      class="menu-btn"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
 
-  <nav class="nav">
-    <a href="index.html#about">About</a>
-    <a href="index.html#companies">Companies</a>
-    <a href="index.html#partners">Partners</a>
-    <a href="transport.html">Transport</a>
-    <a href="fruit.html">Fruit</a>
-    <a class="nav-cta" href="contact.html">Contact</a>
-  </nav>
+    <nav class="nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#companies">Companies</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="transport.html">Transport</a>
+      <a href="fruit.html">Fruit</a>
+      <a class="nav-cta" href="contact.html">Contact</a>
+    </nav>
 
-</header>
+  </header>
+
 
   <!-- CONTACT PAGE -->
   <main class="contact-page">
 
     <div class="shell contact-page-grid">
-
 
       <!-- LEFT SIDE -->
       <div>
@@ -81,7 +84,6 @@
           send us the details and the appropriate
           JHUY team will follow up.
         </p>
-
 
         <div
           class="contact-list"
@@ -114,7 +116,7 @@
 
         <div class="form-grid">
 
-
+          <!-- NAME -->
           <div class="field">
 
             <label for="name">
@@ -132,6 +134,7 @@
           </div>
 
 
+          <!-- COMPANY -->
           <div class="field">
 
             <label for="company">
@@ -148,6 +151,7 @@
           </div>
 
 
+          <!-- EMAIL -->
           <div class="field">
 
             <label for="email">
@@ -165,6 +169,7 @@
           </div>
 
 
+          <!-- INQUIRY TYPE -->
           <div class="field">
 
             <label for="inquiry_type">
@@ -194,6 +199,7 @@
           </div>
 
 
+          <!-- MESSAGE -->
           <div class="field full">
 
             <label for="message">
@@ -212,6 +218,7 @@
         </div>
 
 
+        <!-- SUBMIT -->
         <button
           class="btn"
           id="submit-btn"
@@ -224,15 +231,17 @@
         <p
           class="form-note"
           id="form-status"
+          aria-live="polite"
         ></p>
 
       </form>
 
 
-      <!-- Hidden frame prevents leaving the contact page -->
+      <!-- Hidden iframe keeps user on contact page -->
       <iframe
         name="form-submit-frame"
         id="form-submit-frame"
+        title="Contact form submission"
         style="display:none;"
       ></iframe>
 
@@ -267,6 +276,7 @@
   </footer>
 
 
+  <!-- EXISTING SITE JAVASCRIPT -->
   <script src="assets/site.js"></script>
 
 
